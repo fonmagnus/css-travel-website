@@ -1,0 +1,371 @@
+/* Global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  padding: 2rem 6rem;
+  background: #4c6e97;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  /* property - duration - easing - delay */
+  transition: background 0.5s ease-in-out;
+  /* adding keyframe animations to some object */
+  /* animation: cloudAnimation 2s infinite alternate; */
+}
+
+button:hover {
+  background: #27394e;
+}
+
+/* Nav Section with Hero */
+.main-head {
+  background: #131c27;
+  color: white;
+
+  /* make navbar sticks to the top */
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+nav {
+  /* makes the navbar becomes 10% of screen and not squished */
+  min-height: 10vh;
+
+  /* align logo and menus */
+  display: flex;
+
+  /* content takes 90% of nav bar */
+  width: 90%;
+
+  /* add 5% margin on left and right */
+  margin: auto;
+
+  /* add padding for content */
+  padding: 2rem;
+
+  /* move items centered in vertical alignment in navbar */
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+nav ul {
+  /* make link inside the menus have a flex section */
+  display: flex;
+
+  /* grow - shrink - basis */
+  flex: 1 1 40rem;
+
+  /* add left and right padding between each link */
+  justify-content: space-around;
+
+  /* vertical alignment for each menu */
+  align-items: center;
+  list-style: none;
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("/img/landing-page.jpg");
+
+  /* image takes 90% of screen */
+  min-height: 90vh;
+
+  /* makes image doesn't append in the behind of the image */
+  background-repeat: no-repeat;
+
+  /* the image height will adjust on height of the screen so that no blank space left */
+  background-size: cover;
+
+  /* image centered point becomes center */
+  background-position: center;
+
+  color: white;
+
+  /* to align the welcome page writing and button become aligned */
+  display: flex;
+  flex-direction: column;
+
+  /* vertical alignment for content */
+  justify-content: center;
+
+  /* horizontal alignment */
+  align-items: center;
+
+  text-align: center;
+}
+
+.hero h3 {
+  padding: 5rem;
+}
+
+/* Locations Section */
+
+#locations {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("/img/new-york-page.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  /* to make the cloud doesn't appear when moved into outerside of this section */
+  overflow: hidden;
+}
+
+.locations-head {
+  width: 90%;
+  margin: auto;
+}
+
+.locations-head h2 {
+  padding: 1rem 0rem;
+  text-decoration: underline;
+}
+
+.locations-head h3 {
+  padding: 4rem 0rem;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.moving-cloud-1 {
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+  top: 20%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: cloudAnimation 4s infinite alternate ease-in-out;
+}
+
+/* animations pane for cloud */
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* Benefits Section */
+.benefits-head {
+  background: #343c44;
+  padding: 3rem;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.benefits-head h3 {
+  padding: 1rem;
+}
+
+.cards {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  text-align: center;
+  flex: 1 1 25rem;
+  min-height: 50vh;
+  margin: 2rem 5rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cards img {
+  max-width: 15%;
+  margin: 2rem;
+}
+
+.card h4,
+.card p {
+  padding: 1rem;
+}
+
+.card-icon {
+  background: #4c6e97;
+}
+
+/* Contact Section */
+#contact {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("./img/contact-mountain.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background: rgb(19, 28, 39, 0.8);
+  width: 30%;
+  color: white;
+  border-radius: 20px;
+}
+
+.form-head {
+  text-align: center;
+  padding: 4rem;
+}
+
+.name-form,
+.email-form {
+  padding: 3rem;
+  text-align: center;
+}
+
+.form-wrapper label {
+  margin: 0rem 3rem;
+}
+
+.form-wrapper button {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 8rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.form-wrapper input {
+  padding: 1rem 3rem;
+}
+
+footer {
+  color: white;
+  background: rgb(19, 28, 39, 1);
+}
+
+.footer-wrapper {
+  display: flex;
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  min-height: 10vh;
+  flex-wrap: wrap;
+}
+
+footer h5 {
+  flex: 1 1 40rem;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Media Query */
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+  nav {
+    text-align: center;
+  }
+
+  #logo {
+    padding: 2rem;
+  }
+
+  .cloud {
+    height: 40rem;
+    pointer-events: none;
+  }
+
+  .moving-cloud-1 {
+    z-index: -1;
+  }
+  .moving-cloud-2 {
+    z-index: -2;
+  }
+
+  .locations-head h3 {
+    background: rgb(19, 28, 39, 0.8);
+    color: white;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .form-wrapper {
+    width: 80%;
+  }
+}
